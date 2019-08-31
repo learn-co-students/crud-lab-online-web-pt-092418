@@ -7,12 +7,11 @@ class Review extends Component {
   }
 
   render() {
-    const { review } = this.props;
 
     return (
       <div>
         <li>
-          {review.text}
+          {this.props.review.text}
           <button onClick={this.handleClick}>Delete</button>
         </li>
       </div>
