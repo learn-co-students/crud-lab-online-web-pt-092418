@@ -22,9 +22,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addRestaurant: text => dispatch({ type: "ADD_RESTAURANT", text }),
-  deleteRestaurant: id => dispatch({type: "DELETE_RESTAURANT", id })
-})
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addRestaurant: (restaurant) => dispatch({ type: 'ADD_RESTAURANT', text: restaurant}),
+    deleteRestaurant: id => dispatch({type: "DELETE_RESTAURANT", id})
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RestaurantsContainer)

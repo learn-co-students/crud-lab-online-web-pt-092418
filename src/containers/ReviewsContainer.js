@@ -23,9 +23,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addReview: review => dispatch({ type: "ADD_REVIEW", review }),
-  deleteReview: id => dispatch({type: "DELETE_REVIEW", id })
-})
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addReview: (review) => dispatch({ type: 'ADD_REVIEW', review}),
+    deleteReview: id => dispatch({type: "DELETE_REVIEW", id})
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer);
